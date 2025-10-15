@@ -1,7 +1,11 @@
 package calc;
 
+import java.util.ArrayList;
+
 public class Calculator {
-    //TODO 1. 컬렉션 타입의 연산 결과를 저장하는 필드 생성
+
+    //컬렉션 타입의 연산 결과를 저장하는 필드
+    private ArrayList<Long> calcResultList = new ArrayList<>();
 
 
     /**
@@ -34,9 +38,15 @@ public class Calculator {
         return result;
     }
 
-    //TODO
     /* Getter 메서드 구현 */
+    public ArrayList<Long> getCalcResultList() {
+        return calcResultList;
+    }
+
     /* Setter 메서드 구현 */
+    public void setCalcResultList(long result) {
+        calcResultList.add(result);
+    }
 
     //TODO 연산 결과들 중 가장 먼저 저장된 데이터를 삭제하는 기능
     public void removeResult() {
