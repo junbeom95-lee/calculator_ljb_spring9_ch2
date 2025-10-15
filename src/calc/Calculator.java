@@ -32,6 +32,7 @@ public class Calculator {
                 break;
             case '/':   //나눗셈
                 result = a / b;
+                break;
         }
 
         //3. 반환하기
