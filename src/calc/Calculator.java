@@ -7,9 +7,8 @@ public class Calculator {
     //컬렉션 타입의 연산 결과를 저장하는 필드
     private ArrayList<Long> calcResultList = new ArrayList<>();
 
-
     /**
-     * 두 양의 정수를 받아 계산하고 반환하는 기능
+     * 두 양의 정수를 받아 계산하고 컬렉션에 저장하고 반환하는 기능
      * @param a 첫 번째 입력받은 값
      * @param b 두 번째 입력받은 값
      * @param operator 연산 기호
@@ -34,8 +33,10 @@ public class Calculator {
                 result = a / b;
                 break;
         }
+        //3. 컬렉션에 저장
+        setCalcResultList(result);
 
-        //3. 반환하기
+        //4. 반환하기
         return result;
     }
 
