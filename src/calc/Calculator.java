@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Calculator {
 
     //컬렉션 타입의 연산 결과를 저장하는 필드
-    private ArrayList<Long> calcResultList = new ArrayList<>();
+    private final ArrayList<Long> calcResultList = new ArrayList<>();
 
     /**
      * 두 양의 정수를 받아 계산하고 컬렉션에 저장하고 반환하는 기능
@@ -47,11 +47,17 @@ public class Calculator {
 
     /* Setter 메서드 구현 */
     public void setCalcResultList(long result) {
+        //결과를 저장하는 컬렉션 확인
+        if (calcResultList.size() >= 10) {  // 10개 이상 저장되었는지 확인
+            calcResultList.remove(0);
+        }
+        //결과값을 컬렉션에 저장
         calcResultList.add(result);
     }
 
-    //TODO 연산 결과들 중 가장 먼저 저장된 데이터를 삭제하는 기능
+    //연산 결과들 중 가장 먼저 저장된 데이터를 삭제하는 기능
     public void removeResult() {
-        /* 구현 */
+        //컬렉션에서 가장 먼저 저장된 데이터 삭제
+        calcResultList.remove(0);
     }
 }
