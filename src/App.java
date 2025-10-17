@@ -22,10 +22,7 @@ public class App {  //계산기 lv1
             System.out.print("사칙연산 기호를 입력하세요: ");
             char operator = sc.next().charAt(0);
 
-
-            //TODO(검증단계)
-
-            //3. 계산하기
+            //3. 검증 및 계산하기
             if (!validate(operator, b)) {
                 continue;
             }
@@ -50,7 +47,6 @@ public class App {  //계산기 lv1
             System.out.println("나눗셈 연산에서 분모(두 번째 정수)에 0이 입력될 수 없습니다.");
             return false;
         }
-
         return true;
     }
 
@@ -64,6 +60,7 @@ public class App {  //계산기 lv1
                 break;
             } catch (InputMismatchException ignored) {
                 System.out.println("정수만 입력해주세요.");
+                sc.nextLine();  //캐시를 비워둬야함
             }
         }
         return num;
