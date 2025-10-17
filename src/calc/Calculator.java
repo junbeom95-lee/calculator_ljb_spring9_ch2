@@ -34,7 +34,7 @@ public class Calculator {
                 result = a / b;
                 break;
         }
-        //3. 컬렉션에 저장
+        //3. 계산 이력 저장
         addToHistory(result);
 
         //4. 반환하기
@@ -46,7 +46,11 @@ public class Calculator {
         return calcResultList;
     }
 
-    /* Setter 메서드 구현 */
+    /**
+     * 계산 결과를 10개 이상 저장되면 첫번째꺼 삭제하기
+     * 계산 결과를 저장하기
+     * @param result 계산 결과값
+     */
     public void addToHistory(long result) {
         //결과를 저장하는 컬렉션 확인
         if (calcResultList.size() >= 10) {  // 10개 이상 저장되었는지 확인
