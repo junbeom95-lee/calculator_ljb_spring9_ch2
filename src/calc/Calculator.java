@@ -42,7 +42,7 @@ public class Calculator {
     }
 
     /* Getter 메서드 구현 */
-    public ArrayList<Long> getCalcResultList() {
+    public List<Long> getCalcResultList() {
         return calcResultList;
     }
 
