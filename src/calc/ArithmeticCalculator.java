@@ -13,9 +13,29 @@ public class ArithmeticCalculator {
      * TODO double 타입의 값을 전달 받아도 연산 수행 - 제네릭 사용
      * TODO 피연산자를 여러 타입으로 받을 수 있도록 기능 확장
      */
-    public double calculate(double a, double b) {
-        //수정
-        return 0;
+
+    public long calculate(long a, long b, char operator) {
+        //1. 결과값 선언
+        long result = 0;
+
+        //2. 계산하기
+        switch (operator) {
+            case '+':   //덧셈
+                result = a + b;
+                break;
+            case '-':   //뺄셈
+                result = a - b;
+                break;
+            case '*':   //곱셈
+                result = a * b;
+                break;
+            case '/':   //나눗셈
+                result = a / b;
+                break;
+        }
+
+        //3. 반환하기
+        return result;
     }
 
     //TODO 저장된 연산 결과들 중 Scanner로 입력받은 값보다 큰 결과값들을 출력
