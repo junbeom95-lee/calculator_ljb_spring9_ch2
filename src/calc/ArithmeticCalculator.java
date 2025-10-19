@@ -1,6 +1,6 @@
 package calc;
 
-public class ArithmeticCalculator {
+public class ArithmeticCalculator<T> {
 
     //속성
 
@@ -14,23 +14,23 @@ public class ArithmeticCalculator {
      * TODO 피연산자를 여러 타입으로 받을 수 있도록 기능 확장
      */
 
-    public long calculate(long a, long b, char operator) {
+    public <T extends Number> double calculate(T a, T b, char operator) {
         //1. 결과값 선언
-        long result = 0;
+        double result = 0;
 
         //2. 계산하기
         switch (operator) {
             case '+':   //덧셈
-                result = a + b;
+                result = a.doubleValue() + b.doubleValue();
                 break;
             case '-':   //뺄셈
-                result = a - b;
+                result = a.doubleValue() - b.doubleValue();
                 break;
             case '*':   //곱셈
-                result = a * b;
+                result = a.doubleValue() * b.doubleValue();
                 break;
             case '/':   //나눗셈
-                result = a / b;
+                result = a.doubleValue() / b.doubleValue();
                 break;
         }
 

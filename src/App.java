@@ -13,10 +13,10 @@ public class App {  //계산기 lv1
 
         do {
             //1. 정수 입력 받기
-            System.out.print("첫 번째 양의 정수를 입력하세요: ");
-            long a = getLongInput();
-            System.out.print("두 번째 양의 정수를 입력하세요: ");
-            long b = getLongInput();
+            System.out.print("첫 번째 수를 입력하세요: ");
+            double a = getDoubleInput();
+            System.out.print("두 번째 수를 입력하세요: ");
+            double b = getDoubleInput();
 
             //2. 사칙연산 기호 입력 받기
             System.out.print("사칙연산 기호를 입력하세요: ");
@@ -26,7 +26,7 @@ public class App {  //계산기 lv1
             if (!validate(operator, b)) {
                 continue;
             }
-            long result = calculator.calculate(a, b, operator);
+            double result = calculator.calculate(a, b, operator);
 
             //4. 결과 출력
             System.out.println("결과: " + result);
@@ -38,7 +38,7 @@ public class App {  //계산기 lv1
         } while (!"exit".equals(exit));
     }
 
-    private static boolean validate(char operator, long b) {
+    private static boolean validate(char operator, double b) {
         if (operator != '+' && operator != '-' && operator != '*' && operator != '/') {
             System.out.println("연산 기호를 잘못입력하셨습니다.");
             return false;
@@ -49,16 +49,16 @@ public class App {  //계산기 lv1
         return true;
     }
 
-    private static long getLongInput() {
+    private static double getDoubleInput() {
         final Scanner sc = new Scanner(System.in);
 
-        long num;
+        double num;
         while (true) {
             try {
-                num = sc.nextLong();
+                num = sc.nextDouble();
                 break;
             } catch (InputMismatchException ignored) {
-                System.out.println("정수만 입력해주세요.");
+                System.out.println("숫자만 입력해주세요.");
                 sc.nextLine();  //캐시를 비워둬야함
             }
         }

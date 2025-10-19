@@ -6,8 +6,8 @@ import java.util.List;
 public class Calculator {
 
     //속성
-    private final List<Long> calcResultList = new ArrayList<>();            //결과값을 저장하는 컬렉션
-    ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(); //계산기능을 가지고 있는 클래스
+    private final List<Double> calcResultList = new ArrayList<>();            //결과값을 저장하는 컬렉션
+    ArithmeticCalculator<Double> arithmeticCalculator = new ArithmeticCalculator<>(); //계산기능을 가지고 있는 클래스
 
     //생성자
 
@@ -19,9 +19,9 @@ public class Calculator {
      * @param operator 연산 기호
      * @return result  a와 b를 연산한 결과값
      */
-    public long calculate(long a, long b, char operator) {
+    public double calculate(double a, double b, char operator) {
         //1. 계산하기
-        long result = arithmeticCalculator.calculate(a, b, operator);
+        double result = arithmeticCalculator.calculate(a, b, operator);
 
         //2. 계산 이력 저장
         addToHistory(result);
@@ -31,7 +31,7 @@ public class Calculator {
     }
 
     /* Getter 메서드 구현 */
-    public List<Long> getCalcResultList() {
+    public List<Double> getCalcResultList() {
         return calcResultList;
     }
 
@@ -40,7 +40,7 @@ public class Calculator {
      * 계산 결과를 저장하기
      * @param result 계산 결과값
      */
-    public void addToHistory(long result) {
+    public void addToHistory(double result) {
         //결과를 저장하는 컬렉션 확인
         if (calcResultList.size() >= 10) {  // 10개 이상 저장되었는지 확인
             calcResultList.remove(0);
