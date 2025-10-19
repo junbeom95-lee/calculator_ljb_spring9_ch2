@@ -26,7 +26,6 @@ public class App {  //계산기 lv1
             if (!validate(operator, b)) {
                 continue;
             }
-
             long result = calculator.calculate(a, b, operator);
 
             //4. 결과 출력
@@ -36,7 +35,7 @@ public class App {  //계산기 lv1
             //5. exit를 입력 받으면 반복 종료
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             exit = sc.next();
-        } while ("exit".equals(exit));
+        } while (!"exit".equals(exit));
     }
 
     private static boolean validate(char operator, long b) {
