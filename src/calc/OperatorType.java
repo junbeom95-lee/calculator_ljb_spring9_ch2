@@ -4,7 +4,7 @@ import java.util.function.BiFunction;
 
 public enum OperatorType {
 
-    //TODO 연산 기호 만들기
+    //연산 기호
     SUM('+',(a, b) ->  a + b),
     SUB('-',(a, b) ->  a - b),
     MUL('*',(a, b) ->  a * b),

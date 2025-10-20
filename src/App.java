@@ -6,6 +6,7 @@ public class App {  //계산기
         //객체 생성
         Calculator calculator = new Calculator();
 
+        //계산기 실행
         calculator.calculate();
     }
 }
