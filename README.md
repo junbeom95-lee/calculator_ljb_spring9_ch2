@@ -19,3 +19,6 @@
 ---
 # 프로젝트 기간
 ** 2025.10.14 ~ 2025.2025.10.20
+---
+# 트러블 슈팅 기록
+https://www.notion.so/28c555a1c11f80d2a198f3f33c94b8ad?source=copy_link
