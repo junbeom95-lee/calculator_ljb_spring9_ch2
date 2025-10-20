@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Calculator {
 
     //속성
-    ArithmeticCalculator<Double> arithmeticCalculator = new ArithmeticCalculator<>(); //계산기능을 가지고 있는 클래스
+    ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(); //계산기능을 가지고 있는 클래스
     Scanner sc = new Scanner(System.in);
 
     //생성자
@@ -42,7 +42,6 @@ public class Calculator {
             System.out.println("현재까지의 결과들 : " + arithmeticCalculator.getCalcResultList());
             System.out.println("현재까지 더 큰 수의 결과들 : " + arithmeticCalculator.getBiggerResults(result));
 
-
             //5. exit를 입력 받으면 반복 종료
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             exit = sc.next();
@@ -50,8 +49,8 @@ public class Calculator {
     }
 
     /**
-     * 연산기호를 입력받고 확인하는 메서드
-     * 1. 연산기호 / 와 정수 0 은 입력될 수 없음
+     * 연산기호를 입력받고 확인하는 메서드 <p>
+     * 연산기호 / 와 정수 0 은 입력될 수 없음
      * @param operator  연산 기호
      * @param b 나누기 시 0이면 안되어서 매개변수로 받음
      * @return  valid를 거쳐서 옳은 값이 오면 true

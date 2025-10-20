@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ArithmeticCalculator<T> {
+public class ArithmeticCalculator {
 
     //속성
     private final List<Double> calcResultList = new ArrayList<>();            //결과값을 저장하는 컬렉션
@@ -29,10 +29,10 @@ public class ArithmeticCalculator<T> {
         //2. 계산하기
         double result = operatorType.apply(a.doubleValue(), b.doubleValue());   //인라인화 할 수 있지만 안함
 
-        //4. 계산 이력 저장
+        //3. 계산 이력 저장
         addToHistory(result);
 
-        //3. 반환하기
+        //4. 반환하기
         return result;
     }
 
