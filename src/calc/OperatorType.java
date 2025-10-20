@@ -29,7 +29,7 @@ public enum OperatorType {
     };
 
     //속성
-    private final char operator;
+    private final char operator;    //매핑하기 위한 속성
 
     //생성자
     OperatorType(char operator) {
