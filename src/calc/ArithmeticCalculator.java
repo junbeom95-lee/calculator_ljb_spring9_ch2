@@ -27,7 +27,7 @@ public class ArithmeticCalculator {
         OperatorType operatorType = OperatorType.mappingChar(operator);
 
         //2. 계산하기
-        double result = operatorType.apply(a.doubleValue(), b.doubleValue());   //인라인화 할 수 있지만 안함
+        double result = operatorType.getBiFunction().apply(a.doubleValue(), b.doubleValue());  //인라인화 할 수 있지만 안함
 
         //3. 계산 이력 저장
         addToHistory(result);

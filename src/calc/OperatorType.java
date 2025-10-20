@@ -1,39 +1,28 @@
 package calc;
 
+import java.util.function.BiFunction;
+
 public enum OperatorType {
 
     //TODO 연산 기호 만들기
-    SUM('+') {
-        @Override
-        public double apply(double a, double b) {
-            return a + b;
-        }
-    },
-    SUB('-') {
-        @Override
-        public double apply(double a, double b) {
-            return a - b;
-        }
-    },
-    MUL('*') {
-        @Override
-        public double apply(double a, double b) {
-            return a * b;
-        }
-    },
-    DIV('/') {
-        @Override
-        public double apply(double a, double b) {
-            return a / b;
-        }
-    };
+    SUM('+',(a, b) ->  a + b),
+    SUB('-',(a, b) ->  a - b),
+    MUL('*',(a, b) ->  a * b),
+    DIV('/',(a, b) ->  a / b);
 
     //속성
     private final char operator;    //매핑하기 위한 속성
+    //두 개의 입력(첫 번째, 두 번째)을 받아 결과(세 번째)를 반환하는 함수형 인터페이스
+    private final BiFunction<Double, Double, Double> biFunction;
 
     //생성자
-    OperatorType(char operator) {
+    OperatorType(char operator, BiFunction<Double, Double, Double> biFunction) {
         this.operator = operator;
+        this.biFunction = biFunction;
+    }
+
+    public BiFunction<Double, Double, Double> getBiFunction() {
+        return biFunction;
     }
 
     //기능
@@ -50,12 +39,4 @@ public enum OperatorType {
         }
         return null;
     }
-
-    /**
-     * Enum 상수가 서로 다른 연산을 수행할 수 있도록 익명 클래스 형태 설계
-     * @param a 입력받은 수 a
-     * @param b 입력받은 수 b
-     * @return double형으로 a와 b를 연산한 값
-     */
-    public abstract double apply(double a, double b);
 }
